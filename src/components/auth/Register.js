@@ -7,7 +7,8 @@ export const Register = () => {
     const firstName = useRef()
     const lastName = useRef()
     const username = useRef()
-    const bio = useRef()
+    const penName = useRef()
+    const profilePic = useRef()
     const password = useRef()
     const verifyPassword = useRef()
     const passwordDialog = useRef()
@@ -21,7 +22,8 @@ export const Register = () => {
                 "username": username.current.value,
                 "first_name": firstName.current.value,
                 "last_name": lastName.current.value,
-                "bio": bio.current.value,
+                "penName": penName.current.value,
+                "profilePic": profilePic.current.value,
                 "password": password.current.value
             }
 
@@ -68,8 +70,12 @@ export const Register = () => {
                     <input ref={verifyPassword} type="password" name="verifyPassword" className="form-control" placeholder="Verify password" required />
                 </fieldset>
                 <fieldset>
-                    <label htmlFor="verifyPassword"> Verify Password </label>
-                    <textarea ref={bio} name="bio" className="form-control" placeholder="Let other gamers know a little bit about you..." />
+                    <label htmlFor="inputPenName"> Pen Name </label>
+                    <textarea ref={penName} name="penName" className="form-control" placeholder="What's your moniker?" />
+                </fieldset>
+                <fieldset>
+                    <label htmlFor="inputProfilePic"> Profile Pic </label>
+                    <textarea ref={profilePic} name="profilePic" className="form-control" placeholder="paste image URL here..." />
                 </fieldset>
                 <fieldset style={{
                     textAlign: "center"
