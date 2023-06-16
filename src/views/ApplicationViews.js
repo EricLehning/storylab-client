@@ -3,6 +3,7 @@ import { Login } from "../components/auth/Login"
 import { Register } from "../components/auth/Register"
 import { Authorized } from "./Authorized"
 import { SeedList } from "../components/seed/SeedList"
+import { SeedForm } from "../components/seed/SeedForm"
 
 
 export const ApplicationViews = () => {
@@ -12,6 +13,7 @@ export const ApplicationViews = () => {
             <Route path="/register" element={<Register />} />
             <Route element={<Authorized />}>
                 <Route path="/" element={<SeedList />} />
+                <Route path="/seeds/new" element={<SeedForm />} />
             </Route>
         </Routes>
     </>
