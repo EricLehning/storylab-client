@@ -7,6 +7,15 @@ export const getSeeds = () => {
         .then(response => response.json())
 }
 
+export const getSeedById = (id) => {
+    return fetch(`http://localhost:8000/seeds/${id}`, {
+        headers: {
+        "Authorization": `Token ${localStorage.getItem("lu_token")}`
+        }
+    })
+        .then(res => res.json())
+}
+
 export const createSeed = (seed) => {
     return fetch("http://localhost:8000/seeds", { 
         method: "POST",
@@ -17,6 +26,28 @@ export const createSeed = (seed) => {
         body: JSON.stringify(seed)
     })
         .then(res => res.json())
+}
+
+export const updateSeed = (seed, seedId) => {
+    return fetch(`http://localhost:8000/seeds/${seedId}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Token ${localStorage.getItem("lu_token")}`
+        },
+        body: JSON.stringify(seed)
+    })
+        // .then(response => response.json())
+}
+
+export const deleteSeed = (id) => {
+    return fetch(`http://localhost:8000/seeds/${id}`, {
+        method: "DELETE",
+        headers: {
+            "Authorization": `Token ${localStorage.getItem("lu_token")}`
+        }
+    }
+    )
 }
 
 export const getGenres = () => {
@@ -75,6 +106,15 @@ export const getConsequences = () => {
 
 export const getRewards = () => {
     return fetch("http://localhost:8000/rewards", { 
+        headers:{
+            "Authorization": `Token ${localStorage.getItem("lu_token")}`
+        }
+    })
+        .then(response => response.json())
+}
+
+export const getWriter = () => {
+    return fetch("http://localhost:8000/writers", { 
         headers:{
             "Authorization": `Token ${localStorage.getItem("lu_token")}`
         }

@@ -1,15 +1,21 @@
 import React, { useEffect, useState } from "react"
-import { getSeeds } from "../../managers/SeedManager.js"
+import { getSeeds, getSeedById, deleteSeed } from "../../managers/SeedManager.js"
 import { useNavigate, useParams } from 'react-router-dom'
 
 
 export const SeedList = (props) => {
     const navigate = useNavigate()
+    const { seedId } = useParams()
     const [seeds, setSeeds] = useState([]);
+    
 
   useEffect(() => {
     getSeeds().then(data => setSeeds(data));
   }, []);
+
+  const deleteSeedEvent = (id) => {
+      deleteSeed(id).then(() => getSeeds().then(data => setSeeds(data)))
+}
 
   return (
     <article className="seeds">
@@ -29,6 +35,12 @@ export const SeedList = (props) => {
               }
             }).join(', ')} in order to ${seed.reward.prize}, or else ${seed.consequence.negResult}.`}
           </div>
+          <button className="btn btn-2 btn-sep icon-update"
+            onClick={() => {
+                navigate({ pathname: `/seeds/update/${seed.id}` })
+            }}
+        >Update Seed</button>
+          <button onClick={()=>deleteSeedEvent(seed.id)}>Delete</button>
         </section>
       ))}
     </article>
