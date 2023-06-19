@@ -219,7 +219,7 @@ export const SeedForm = () => {
 
                     // Send POST request to your API
                     createSeed(seed)
-                        .then(() => navigate("/"))
+                        .then(() => navigate("/seeds"))
                 }}
                 className="btn btn-primary">Create</button>
         </form>
