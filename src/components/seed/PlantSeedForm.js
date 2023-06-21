@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { useNavigate, useParams } from 'react-router-dom'
 import { updateSeed, getSeedById, getCharacters, getConsequences, getDesires, getFears, getGenres, getObstacles, getRewards } from '../../managers/SeedManager.js'
 import { chatInput } from "../../managers/ChatbotManager.js"
+import { createOutline } from "../../managers/OutlineManager.js"
 
 export const PlantSeedForm = () => {
     const navigate = useNavigate()
@@ -69,6 +70,21 @@ export const PlantSeedForm = () => {
                     "Loading outline..."
                 )}
                 </div>
+                <button type="submit"
+                onClick={evt => {
+                    // Prevent form from being submitted
+                    evt.preventDefault()
+
+                    const outlineObject = {
+                        title: currentSeed.title,
+                        prose: outline,
+                    }
+
+                    // Send POST request to your API
+                    createOutline(outlineObject)
+                        .then(() => navigate("/outlines"))
+                }}
+                className="btn btn-primary">Save</button>
             </article>
         )
 }
