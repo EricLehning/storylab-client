@@ -4,7 +4,7 @@ import { getWriter } from "../../managers/SeedManager"
 
 export const ProfilePage = () => {
     const navigate = useNavigate()
-    const [writer, setWriter] = useState(null)
+    const [writer, setWriter] = useState({})
 
     useEffect(() => {
         getWriter()
