@@ -8,6 +8,7 @@ import { UpdateSeedForm } from "../components/seed/UpdateSeedForm"
 import { MainPage } from "../components/main/MainPage"
 import { ProfilePage } from "../components/profile/ProfilePage"
 import { PlantSeedForm } from "../components/seed/PlantSeedForm"
+import { OutlineList } from "../components/outline/OutlineList"
 
 export const ApplicationViews = () => {
     return <>
@@ -18,6 +19,7 @@ export const ApplicationViews = () => {
                 <Route path="/" element={<MainPage />} />
                 <Route path="/profile" element={<ProfilePage />} />      
                 <Route path="/seeds" element={<SeedList />} />
+                <Route path="/outlines" element={<OutlineList />} />
                 <Route path="/seeds/new" element={<SeedForm />} />
                 <Route path="/seeds/update/:seedId" element={<UpdateSeedForm />} />
                 <Route path="/seeds/plant/:seedId" element={<PlantSeedForm />} />
