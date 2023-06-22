@@ -7,6 +7,7 @@ import { createOutline } from "../../managers/OutlineManager.js"
 export const PlantSeedForm = () => {
     const navigate = useNavigate()
     const { seedId } = useParams()
+    const [outline, setOutline] = useState(null)
     const [currentSeed, setCurrentSeed] = useState({
         title: "",
         genre: 0,
@@ -18,7 +19,7 @@ export const PlantSeedForm = () => {
         reward:0
     })
 
-    const [outline, setOutline] = useState(null)
+    
 
     const fetchSeed = () => {
         getSeedById(seedId)
@@ -31,6 +32,10 @@ export const PlantSeedForm = () => {
         },
         [seedId] 
         )
+    
+    console.log(seedId)
+
+    console.log(currentSeed)
 
     useEffect(() => {
         const userInput = `${currentSeed.title} is a ${currentSeed.genre.category} about a ${currentSeed.character.description} who wants ${currentSeed.desire.wish} but is afraid of ${currentSeed.fear.fearName} and must overcome ${currentSeed.obstacles.map((obstacle, index) => {
@@ -40,17 +45,21 @@ export const PlantSeedForm = () => {
                 return obstacle.obstruction;
             }
         }).join(', ')} in order to ${currentSeed.reward.prize} or else ${currentSeed.consequence.negResult}.`
+
+        console.log(userInput)
     
         const fetchOutline = async () => {
             try {
                 const generatedOutline = await chatInput(userInput);
-                setOutline(generatedOutline);
+                    setOutline(generatedOutline);
             } catch (error) {
                 console.error("Error:", error);
             }
+        // only call the fetchOutline function once currentSeed is populated with data
         };
-
-        fetchOutline();
+        if(currentSeed.title !=="") {
+            fetchOutline();
+        }
     }, [currentSeed])
 
     console.log(outline)

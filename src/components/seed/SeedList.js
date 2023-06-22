@@ -40,11 +40,16 @@ export const SeedList = (props) => {
                 navigate({ pathname: `/seeds/update/${seed.id}` })
             }}
           >Update Seed</button>
-          <button className="btn btn-2 btn-sep icon-update"
+          <button
+            className="btn btn-2 btn-sep icon-update"
             onClick={() => {
-                navigate({ pathname: `/seeds/plant/${seed.id}` })
+                 // Prevent default form submission
+                navigate({ pathname: `/seeds/plant/${seed.id}` });
             }}
-          >Plant Seed</button>
+          >
+            Plant Seed
+          </button>
+
           <button onClick={()=>deleteSeedEvent(seed.id)}>Delete</button>
         </section>
       ))}
