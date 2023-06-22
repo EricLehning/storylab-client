@@ -8,17 +8,15 @@ export const OutlineList = (props) => {
     const navigate = useNavigate()
     const { outlineId } = useParams()
     const [outlines, setOutlines] = useState([]);
-    const [copied, setCopied] = useState(false);
     
 
   useEffect(() => {
     getOutlines().then(data => setOutlines(data));
   }, []);
 
-  const copyToClipboard = () => {
-    const outlineContent = outlines.map((outline) => outline.prose).join("\n");
+  const copyToClipboard = (outline) => {
+    const outlineContent = outline.prose;
     copy(outlineContent);
-    setCopied(true);
   };
   
 
@@ -39,9 +37,9 @@ export const OutlineList = (props) => {
                             <p key={index}>{paragraph}</p>
                         ))}
           </div>
-          <button onClick={copyToClipboard}>
-            {copied ? "Copied!" : "Copy to Clipboard"}
-            </button>
+          <button onClick={() => copyToClipboard(outline)}>
+          Copy to Clipboard
+          </button>
 
           <button onClick={()=>deleteOutlineEvent(outline.id)}>Delete</button>
         </section>
