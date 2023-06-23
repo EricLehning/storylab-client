@@ -1,5 +1,13 @@
-.h1, h1 {
-    font-size: 2.5rem;
+.h1,
+h1 {
+  font-size: 2.5rem;
+  font-family: "New Courier", Courier, monospace;
+}
+
+.h2,
+h2 {
+  font-size: 1.5rem;
+  font-family: "New Courier", Courier, monospace;
 }
 
 fieldset {

@@ -1,0 +1,38 @@
+/* PlantSeedForm.css */
+
+/* Container styles */
+.outline {
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+}
+
+/* Header styles */
+.plantForm_header {
+  font-family: "New Courier", monospace;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Title styles */
+.outline_title {
+  font-family: "New Courier", monospace;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Seed outline styles */
+.seed_outline {
+  font-family: "New Courier", monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Save button styles */
+.btn-primary {
+  font-family: "New Courier", monospace;
+  font-size: 16px;
+}

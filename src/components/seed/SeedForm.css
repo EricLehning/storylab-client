@@ -1,0 +1,14 @@
+.seedForm__title {
+    font-family: "New Courier", monospace;
+}
+
+.seedForm {
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 50px;
+}
+
+.form-group {
+    font-family: "New Courier", monospace;
+}
