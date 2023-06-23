@@ -69,6 +69,10 @@ export const PlantSeedForm = () => {
 
     console.log(outline)
 
+    const refreshPage = () => {
+        window.location.reload();
+    };
+
         return (
             <article className="outline">
                 <h2 className="plantForm_header">Outline</h2>
@@ -85,6 +89,7 @@ export const PlantSeedForm = () => {
                     "Loading outline..."
                 )}
                 </div>
+
                 <button type="submit"
                 onClick={evt => {
                     // Prevent form from being submitted
