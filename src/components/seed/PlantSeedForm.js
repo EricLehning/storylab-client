@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { updateSeed, getSeedById, getCharacters, getConsequences, getDesires, getFears, getGenres, getObstacles, getRewards } from '../../managers/SeedManager.js'
 import { chatInput } from "../../managers/ChatbotManager.js"
 import { createOutline } from "../../managers/OutlineManager.js"
+import "./PlantSeedForm.css";
 
 export const PlantSeedForm = () => {
     const navigate = useNavigate()
@@ -62,11 +63,16 @@ export const PlantSeedForm = () => {
         }
     }, [currentSeed])
 
+    const handleRefresh = () => {
+        window.location.reload();
+    };
+
     console.log(outline)
 
         return (
             <article className="outline">
                 <h2 className="plantForm_header">Outline</h2>
+                <div className="outline-container">
                 <h3 className="outline_title">{`${currentSeed.title}`}</h3>
                 <div className="seed_outline">
                 {outline !== null ? (
@@ -94,6 +100,13 @@ export const PlantSeedForm = () => {
                         .then(() => navigate("/outlines"))
                 }}
                 className="btn btn-primary">Save</button>
+                <button
+                        className="btn btn-secondary"
+                        onClick={handleRefresh}
+                    >
+                        Rewrite
+                    </button>
+                </div>
             </article>
         )
 }

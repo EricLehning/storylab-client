@@ -1,0 +1,53 @@
+.outlines {
+    padding: 20px;
+  }
+  
+  .outlines_header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 25px;
+    margin-bottom: 20px;
+    font-family: "New Courier", monospace;
+  }
+  
+  
+  .outline {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+  
+  .outline_main_title {
+    margin-bottom: 10px;
+  }
+  
+  .outline_title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .outline_prose {
+    margin-bottom: 10px;
+    font-family: "New Courier", monospace;
+  }
+  
+  .outline_copy_button,
+  .outline_delete_button {
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "New Courier", monospace;
+    margin-right: 10px;
+  }
+  
+  .outline_copy_button:hover,
+  .outline_delete_button:hover {
+    background-color: white;
+    color: black;
+  }
+  
+  

@@ -1,0 +1,47 @@
+/* SeedList.css */
+
+.seeds {
+    /* Add styles for the container element */
+  }
+  
+.seed {
+    /* Add styles for each seed section */
+    
+}
+  
+.seed__container {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 25px;
+}
+  
+.seed__logline {
+    /* Add styles for the seed logline element */
+    
+}
+  
+.btn {
+    /* Add styles for the buttons */
+    padding: 8px 16px;
+    margin-right: 10px;
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: "New Courier", monospace;
+    font-size: 16px;
+}
+  
+.btn:hover {
+    /* Add styles for the button when hovered */
+    background-color: white;
+    color: black;
+}
+
+.icon-create::before {
+    /* Add styles for the create icon */
+    content: "+";
+    margin-right: 5px;
+}

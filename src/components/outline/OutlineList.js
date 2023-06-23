@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import { copy } from "clipboard";
 import { getOutlines, getOutlineById, deleteOutline } from "../../managers/OutlineManager";
 import { useNavigate, useParams } from 'react-router-dom'
+import "./OutlineList.css";
 
 
 export const OutlineList = (props) => {
@@ -37,11 +38,11 @@ export const OutlineList = (props) => {
                             <p key={index}>{paragraph}</p>
                         ))}
           </div>
-          <button onClick={() => copyToClipboard(outline)}>
+          <button className="outline_copy_button" onClick={() => copyToClipboard(outline)}>
           Copy to Clipboard
           </button>
 
-          <button onClick={()=>deleteOutlineEvent(outline.id)}>Delete</button>
+          <button className="outline_delete_button" onClick={()=>deleteOutlineEvent(outline.id)}>Delete</button>
         </section>
       ))}
     </article>

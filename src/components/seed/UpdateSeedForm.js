@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { useNavigate, useParams } from 'react-router-dom'
 import { updateSeed, getSeedById, getCharacters, getConsequences, getDesires, getFears, getGenres, getObstacles, getRewards } from '../../managers/SeedManager.js'
-
+import "./SeedForm.css";
 
 export const UpdateSeedForm = () => {
     const navigate = useNavigate()

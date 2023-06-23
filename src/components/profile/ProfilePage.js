@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { useNavigate } from 'react-router-dom'
 import { getWriter } from "../../managers/SeedManager"
+import "./Profile.css"
 
 export const ProfilePage = () => {
     const navigate = useNavigate()
@@ -17,12 +18,11 @@ export const ProfilePage = () => {
 
     return (
         <article>
-            <div>
-                {<img src={writer.profilePic} alt="Profile Picture" />}
+            <div className="profile-container">
+                {<img className="profile-picture" src={writer.profilePic} alt="Profile Picture" />}
+                <div className="pen-name">{writer.penName}</div>            
             </div>
-            <div>
-                {writer.penName}
-            </div>
+            
         </article>
     )
 }

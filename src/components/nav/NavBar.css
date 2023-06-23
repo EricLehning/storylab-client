@@ -1,10 +1,21 @@
 .navbar {
     display: flex;
     flex-wrap: nowrap;
-    justify-content: left;
+    justify-content: space-around;
 }
 
 .navbar__item {
     flex-basis: 20%;
     list-style-type: none;
+}
+
+.nav-link {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 10);
+    font-family: "New Courier", Courier, monospace;
+    text-decoration: none;
+    color: rgb(252, 252, 252)
+}
+
+.nav-link:hover {
+    color: black; /* Add this line to set the hover text color to black */
 }
