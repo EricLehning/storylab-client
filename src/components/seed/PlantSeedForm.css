@@ -36,3 +36,34 @@
   font-family: "New Courier", monospace;
   font-size: 16px;
 }
+
+.loading-dots::after {
+    content: "...";
+    animation: dots-animation 1s infinite;
+  }
+  
+  @keyframes dots-animation {
+    0%,
+    40%,
+    100% {
+      opacity: 0;
+    }
+    20%,
+    60% {
+      opacity: 1;
+    }
+  }
+  
+  .loading-text {
+    opacity: 0;
+    animation: fade-in 1s forwards;
+  }
+  
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }

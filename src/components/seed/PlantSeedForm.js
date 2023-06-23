@@ -69,10 +69,6 @@ export const PlantSeedForm = () => {
 
     console.log(outline)
 
-    const refreshPage = () => {
-        window.location.reload();
-    };
-
         return (
             <article className="outline">
                 <h2 className="plantForm_header">Outline</h2>
